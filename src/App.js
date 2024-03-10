@@ -32,15 +32,18 @@ class App extends Component {
   }
 
   render() {
-    const filtered_monsters = this.state.monsters.filter( 
+    const { monsters, search_string } = this.state;
+    const { on_search_change } = this;
+
+    const filtered_monsters = monsters.filter( 
       (element) => {return(
-        element.name.toLowerCase().includes(this.state.search_string)
+        element.name.toLowerCase().includes(search_string)
       )}
     );
 
     return (
       <div className="App">
-        <input type="text" onChange={ this.on_search_change } />
+        <input type="text" onChange={ on_search_change } />
         {filtered_monsters.map((monster) => {
           return <h1 key={monster.id}>{monster.name}</h1>
         })}

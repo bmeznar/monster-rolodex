@@ -19,14 +19,16 @@ class App extends Component {
           <p>
             Hello {this.state.name}!
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <button 
+            onClick={() => {
+              this.setState( (state, props) => {
+                return ({name: "Janez"})
+              },
+              () => { // callback funkcija  se pokliče, po tem ko se setState nastavi
+                console.log(this.state);
+              });
+            }
+          }>Change name</button>
         </header>
       </div>
     );

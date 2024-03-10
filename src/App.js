@@ -7,29 +7,20 @@ class App extends Component {
     super()
 
     this.state = {
-      name: "Blaž"
+      monsters: [
+        {name: "Janez", id: 1}, 
+        {name: "Peter", id: 2},
+        {name: "Simon", id: 3},
+      ]
     }
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hello {this.state.name}!
-          </p>
-          <button 
-            onClick={() => {
-              this.setState( (state, props) => {
-                return ({name: "Janez"})
-              },
-              () => { // callback funkcija  se pokliče, po tem ko se setState nastavi
-                console.log(this.state);
-              });
-            }
-          }>Change name</button>
-        </header>
+        {this.state.monsters.map((monster) => {
+          return <h1 key={monster.id}>{monster.name}</h1>
+        })}
       </div>
     );
   }

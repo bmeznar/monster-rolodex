@@ -2,6 +2,8 @@ import { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import CardList from './components/card-list/card.list.component';
+
 class App extends Component {
   constructor() {
     super()
@@ -17,11 +19,7 @@ class App extends Component {
       .then((response) => response.json())
       .then((users) => this.setState(() => {
           return {monsters: users}
-      },
-      () => {
-        console.log(this.state.monsters);
-      }
-      ));
+      }));
   }
 
   on_search_change = (event) => {
@@ -43,10 +41,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input type="text" onChange={ on_search_change } />
-        {filtered_monsters.map((monster) => {
+        <input type="search" placeholder="Search monsters..." onChange={ on_search_change } />
+        {/* {filtered_monsters.map((monster) => {
           return <h1 key={monster.id}>{monster.name}</h1>
-        })}
+        })} */}
+        <CardList monsters={filtered_monsters} />
       </div>
     );
   }

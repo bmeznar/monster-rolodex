@@ -2,10 +2,11 @@ import { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import CardList from './components/card-list/card.list.component';
+import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 
 class App extends Component {
+  
   constructor() {
     super()
 

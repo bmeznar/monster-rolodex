@@ -8,7 +8,7 @@ class CardList extends Component {
     const {monsters} = this.props
         
     return (
-      <div class="list-wrapper">
+      <div className="list-wrapper">
         {monsters.map((monster) => {
           return (
             <Card

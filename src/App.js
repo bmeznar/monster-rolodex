@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import CardList from './components/card-list/card.list.component';
+import SearchBox from './components/search-box/search-box.component';
 
 class App extends Component {
   constructor() {
@@ -41,10 +42,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input type="search" placeholder="Search monsters..." onChange={ on_search_change } />
-        {/* {filtered_monsters.map((monster) => {
-          return <h1 key={monster.id}>{monster.name}</h1>
-        })} */}
+        <SearchBox 
+          onChangeHandler = {on_search_change} 
+          placeholder = 'Search monsters...' 
+        />
         <CardList monsters={filtered_monsters} />
       </div>
     );

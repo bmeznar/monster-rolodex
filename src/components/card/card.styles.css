@@ -1,0 +1,16 @@
+.card-wrapper {
+  width: min-content;
+  background-color: aquamarine;
+  border-radius: 10px;
+  transition: 0.5s;
+  padding: 20px;
+}
+
+.card-wrapper:hover {
+  scale: 1.05;
+}
+
+.card-img {
+  width: 250px;
+  height: 250px;
+}
